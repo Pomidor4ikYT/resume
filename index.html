@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Віталій Швед - Резюме</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <div class="resume-card">
+            <!-- Шапка -->
+            <div class="header">
+                <div class="avatar" id="avatar">ВШ</div>
+                <div class="header-info">
+                    <h1>Швед Віталій Михайлович</h1>
+                    <div class="title">UI/UX Designer | Web-розробник</div>
+                    <div class="contacts">
+                        <div class="contact-item" onclick="copyToClipboard('shvedvitalik07@gmail.com', this)">
+                            <i class="icon icon-mail"></i>
+                            shvedvitalik07@gmail.com
+                        </div>
+                        <div class="contact-item" onclick="copyToClipboard('+380988513636', this)">
+                            <i class="icon icon-phone"></i>
+                            +380988513636
+                        </div>
+                        <div class="contact-item" onclick="copyToClipboard('м. Стрий', this)">
+                            <i class="icon icon-location"></i>
+                            м. Стрий
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Навігація -->
+            <div class="nav">
+                <button class="nav-btn active" onclick="showSection('about')">Про мене</button>
+                <button class="nav-btn" onclick="showSection('skills')">Навички</button>
+                <button class="nav-btn" onclick="showSection('projects')">Проєкти</button>
+                <button class="nav-btn" onclick="showSection('experience')">Досвід</button>
+                <button class="nav-btn" onclick="showSection('education')">Освіта</button>
+            </div>
+
+            <!-- Контент -->
+            <div class="content">
+                <!-- Про мене -->
+                <div id="about" class="section active">
+                    <h2 class="section-title">Про мене</h2>
+                    <div class="about-text">
+                        Студент 4-го курсу спеціальності "Комп'ютерні науки" з практичним досвідом створення веб-проєктів. Володію HTML, CSS, JavaScript, маю хист до UI/UX-дизайну. Реалізував повноцінний сайт для туристичного агентства "Oceanica" як дипломний проєкт. Швидко навчаюся, відповідально ставлюся до завдань, маю розвинені комунікативні навички та критичне мислення.
+                    </div>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <div class="stat-icon">⏱️</div>
+                            <div class="stat-value">10-15 год</div>
+                            <div class="stat-label">на проєкт Oceanica</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">💻</div>
+                            <div class="stat-value">1+</div>
+                            <div class="stat-label">технології</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-icon">🚀</div>
+                            <div class="stat-value">Мотивований</div>
+                            <div class="stat-label">до розвитку</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Навички -->
+                <div id="skills" class="section">
+                    <h2 class="section-title">Технічні навички</h2>
+                    <div class="skills-grid" id="skills-grid"></div>
+
+                    <!-- Особисті якості -->
+                    <div class="soft-skills-container">
+                        <h3 class="soft-skills-title">Особисті якості</h3>
+                        <div class="soft-skills-grid" id="soft-skills"></div>
+                    </div>
+                </div>
+
+                <!-- Проєкти -->
+                <div id="projects" class="section">
+                    <h2 class="section-title">Мої проєкти</h2>
+                    <div class="project-card">
+                        <h3 class="project-title">Oceanica</h3>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 20px;">Сайт туристичного агентства (дипломний проєкт)</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <span style="color: rgba(255,255,255,0.6);">⏱ 10-15 годин</span>
+                            <a href="https://github.com/Pomidor4ikYT/oceanica" target="_blank" class="social-link" style="padding: 8px 20px;">
+                                <i class="icon icon-github"></i>
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Досвід -->
+                <div id="experience" class="section">
+                    <h2 class="section-title">Досвід</h2>
+                    
+                    <div class="experience-item">
+                        <div class="exp-dot"></div>
+                        <h3 style="color: white; font-size: 20px; margin-bottom: 5px;">Навчальний проєкт 'Oceanica'</h3>
+                        <p style="color: #b39ddb; margin-bottom: 15px;">Сайт туристичного агентства | 2025-2026</p>
+                        <ul style="color: rgba(255,255,255,0.8); list-style: none;">
+                            <li style="margin-bottom: 8px; display: flex; gap: 8px;">→ Самостійно спроєктував та розробив повнофункціональний сайт</li>
+                            <li style="margin-bottom: 8px; display: flex; gap: 8px;">→ Створив адаптивний дизайн з урахуванням сучасних UI/UX-тенденцій</li>
+                            <li style="margin-bottom: 8px; display: flex; gap: 8px;">→ Реалізував фронтенд-частину з використанням HTML, CSS та JavaScript</li>
+                            <li style="margin-bottom: 8px; display: flex; gap: 8px;">→ Витратив 10-15 годин на повний цикл розробки</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-dot"></div>
+                        <h3 style="color: white; font-size: 20px; margin-bottom: 5px;">Інший досвід</h3>
+                        <p style="color: #b39ddb; margin-bottom: 15px;">Ресторанний бізнес | 2023-2026</p>
+                        <ul style="color: rgba(255,255,255,0.8); list-style: none;">
+                            <li style="margin-bottom: 8px; display: flex; gap: 8px;">→ Робота в команді в умовах високого навантаження</li>
+                            <li style="margin-bottom: 8px; display: flex; gap: 8px;">→ Набуто навичок відповідальності, стресостійкості</li>
+                            <li style="margin-bottom: 8px; display: flex; gap: 8px;">→ Ефективна комунікація з клієнтами</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Освіта -->
+                <div id="education" class="section">
+                    <h2 class="section-title">Освіта</h2>
+                    <div style="background: rgba(255,255,255,0.05); padding: 30px; border-radius: 25px;">
+                        <h3 style="font-size: 24px; color: white; margin-bottom: 10px;">ВСП "СФК ЛНУП"</h3>
+                        <p style="color: #b39ddb; margin-bottom: 20px;">2022-2026</p>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 8px;">🎓 Спеціальність: 122 "Комп'ютерні науки"</p>
+                        <p style="color: rgba(255,255,255,0.8); margin-bottom: 8px;">📚 Освітній рівень: молодший спеціаліст</p>
+                        <p style="color: rgba(255,255,255,0.8);">💻 Дипломний проєкт: сайт "Oceanica"</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="footer">
+                <a href="https://github.com/Pomidor4ikYT" target="_blank" class="social-link">
+                    <i class="icon icon-github"></i>
+                    GitHub
+                </a>
+                <a href="https://github.com/Pomidor4ikYT/oceanica" target="_blank" class="social-link">
+                    <i class="icon icon-project"></i>
+                    Oceanica
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
