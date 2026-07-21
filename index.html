@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Резюме Frontend-розробника та веб-дизайнера Віталія Шведа. Досвід роботи з React, TypeScript, HTML, CSS, SQL, хостингом, ТЗ, аналізом конкурентів.">
-    <title>Віталій Швед | Frontend Developer & Web Designer</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Резюме Full Stack розробника Віталія Шведа. Next.js, React, TypeScript, Node.js, Supabase, Three.js, Tailwind CSS." />
+    <title>Віталій Швед | Full Stack Developer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <style>
+        /* ---- загальні скидання ---- */
         * {
             margin: 0;
             padding: 0;
@@ -32,6 +33,7 @@
             overflow: hidden;
         }
 
+        /* ---- шапка ---- */
         .header {
             background: #1e2f3e;
             padding: 30px 40px;
@@ -53,7 +55,8 @@
             font-size: 44px;
             font-weight: 600;
             color: white;
-            border: 3px solid rgba(255,255,255,0.3);
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            flex-shrink: 0;
         }
 
         .header-info {
@@ -68,7 +71,7 @@
 
         .header-info .title {
             font-size: 17px;
-            background: rgba(255,255,255,0.12);
+            background: rgba(255, 255, 255, 0.12);
             display: inline-block;
             padding: 5px 16px;
             border-radius: 40px;
@@ -93,13 +96,13 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(255,255,255,0.08);
+            background: rgba(255, 255, 255, 0.08);
             padding: 8px 18px;
             border-radius: 40px;
             font-size: 14px;
             cursor: pointer;
             transition: 0.2s;
-            border: 1px solid rgba(255,255,255,0.15);
+            border: 1px solid rgba(255, 255, 255, 0.15);
         }
 
         .contact-item:hover {
@@ -118,8 +121,8 @@
         }
 
         .pdf-corner {
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.3);
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
             padding: 8px 20px;
             border-radius: 40px;
             font-size: 14px;
@@ -137,6 +140,7 @@
             transform: translateY(-2px);
         }
 
+        /* ---- навігація ---- */
         .nav {
             display: flex;
             flex-wrap: wrap;
@@ -175,6 +179,7 @@
             background: #ecf3f8;
         }
 
+        /* ---- контент ---- */
         .content {
             padding: 40px;
             background: white;
@@ -190,8 +195,14 @@
         }
 
         @keyframes fade {
-            from { opacity: 0; transform: translateY(6px);}
-            to { opacity: 1; transform: translateY(0);}
+            from {
+                opacity: 0;
+                transform: translateY(6px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .section-title {
@@ -214,6 +225,11 @@
             border: 1px solid #e2edf5;
         }
 
+        .about-text ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+
         .stats {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -231,7 +247,7 @@
 
         .stat-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 20px -12px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.1);
         }
 
         .stat-emoji {
@@ -250,6 +266,7 @@
             color: #4a627a;
         }
 
+        /* ---- навички ---- */
         .skills-wrapper {
             display: flex;
             flex-direction: column;
@@ -336,9 +353,10 @@
             font-weight: 500;
             color: #1e3a4a;
             border: 1px solid #d0e0ec;
-            white-space: nowrap; 
+            white-space: nowrap;
         }
 
+        /* ---- проєкти ---- */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -356,7 +374,7 @@
         .project-card:hover {
             transform: translateY(-5px);
             border-color: #c0d4e4;
-            box-shadow: 0 20px 25px -12px rgba(0,0,0,0.08);
+            box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
         }
 
         .project-title {
@@ -392,6 +410,7 @@
             display: flex;
             gap: 14px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .project-link {
@@ -412,6 +431,7 @@
             background: #2c6e9e;
         }
 
+        /* ---- досвід ---- */
         .experience-item {
             background: #fafdff;
             border-radius: 22px;
@@ -450,6 +470,76 @@
             font-weight: bold;
         }
 
+        /* ---- досягнення (блок) ---- */
+        .achievements-block {
+            margin-top: 40px;
+            background: linear-gradient(135deg, #f0f6fc 0%, #e6f0f8 100%);
+            border-radius: 28px;
+            padding: 32px;
+        }
+
+        .achievements-block h3 {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 24px;
+            margin-bottom: 24px;
+            color: #1e2f3e;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .achievement-card {
+            background: white;
+            border-radius: 20px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .achievement-card .icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .achievement-card .label {
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .achievement-card .desc {
+            color: #4a627a;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        /* ---- освіта ---- */
+        .edu-block {
+            background: #f6fafd;
+            border-radius: 24px;
+            padding: 28px;
+        }
+
+        .edu-block h3 {
+            font-size: 24px;
+            margin-bottom: 8px;
+        }
+
+        .edu-block .sub {
+            color: #2c6e9e;
+            font-weight: 500;
+        }
+
+        .edu-block hr {
+            margin: 20px 0;
+            border-color: #d0e0ec;
+        }
+
+        /* ---- футер ---- */
         .footer {
             background: #f8fbfe;
             padding: 24px 40px;
@@ -496,12 +586,16 @@
             border-color: #1e2f3e;
         }
 
+        /* ---- друк ---- */
         @media print {
             body {
                 background: white;
                 padding: 0;
             }
-            .nav, .footer, .pdf-corner, .contact-item::after {
+            .nav,
+            .footer,
+            .pdf-corner,
+            .contact-item::after {
                 display: none;
             }
             .resume-card {
@@ -525,7 +619,8 @@
             .pdf-corner {
                 align-self: center;
             }
-            .content, .nav {
+            .content,
+            .nav {
                 padding-left: 24px;
                 padding-right: 24px;
             }
@@ -533,209 +628,280 @@
     </style>
 </head>
 <body>
-<div class="container">
-    <div class="resume-card">
-        <!-- Шапка -->
-        <div class="header">
-            <div class="avatar">ВШ</div>
-            <div class="header-info">
-                <h1>Швед Віталій Михайлович</h1>
-                <div class="title">Frontend Developer | Web Designer | UI/UX</div>
-                <div class="contact-row">
-                    <div class="contacts">
-                        <div class="contact-item" data-copy="shvedvitalik07@gmail.com">📧 shvedvitalik07@gmail.com</div>
-                        <div class="contact-item" data-copy="+380988513636">📞 +380988513636</div>
-                        <div class="contact-item" data-copy="м. Стрий">📍 м. Стрий</div>
-                    </div>
-                    <div class="pdf-corner" id="pdfCornerBtn">📄 Завантажити PDF</div>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+        <div class="resume-card">
 
-        <!-- Навігація -->
-        <div class="nav">
-            <button class="nav-btn active" data-section="about"><i>👤</i> Про мене</button>
-            <button class="nav-btn" data-section="skills"><i>🛠️</i> Навички</button>
-            <button class="nav-btn" data-section="projects"><i>📁</i> Проєкти</button>
-            <button class="nav-btn" data-section="experience"><i>💼</i> Досвід</button>
-            <button class="nav-btn" data-section="education"><i>🎓</i> Освіта</button>
-        </div>
-
-        <div class="content">
-            <!-- Про мене -->
-            <div id="about" class="section active">
-                <h2 class="section-title">Про мене</h2>
-                <div class="about-text">
-                    Студент 4-го курсу спеціальності «Комп'ютерні науки». Поєдную технічні навички фронтенд-розробника з розумінням веб-дизайну, UX-досліджень та комунікації із замовниками. 
-                    <br><br>
-                    <strong>Додаткові компетенції:</strong>
-                    <ul style="margin-left: 20px; margin-top: 10px;">
-                        <li>Деплой проєктів на хостинги (Render, Ukraine.com.ua) та налаштування доменів.</li>
-                        <li>Підключення баз даних SQL (PostgreSQL/MySQL) через REST API для динамічних сайтів.</li>
-                        <li>Складання технічних завдань (ТЗ) та аналіз вимог замовника.</li>
-                        <li>Проведення опитувань, UX-інтерв'ю та аналіз конкурентів для покращення дизайну.</li>
-                        <li>Розробка у Visual Studio, створення дизайн-систем.</li>
-                        <li>Написання документації, постановка задач у Trello/Jira.</li>
-                    </ul>
-                    <br>
-                    Реалізував три повноцінні вебпроєкти, де самостійно виконував повний цикл: від аналізу та дизайну до верстки, програмування та деплою. Маю досвід роботи з реальними замовниками та викладачами-кураторами.
-                </div>
-                <div class="stats">
-                    <div class="stat-card"><div class="stat-emoji">✅</div><div class="stat-number">3+</div><div class="stat-label">реалізованих проєктів</div></div>
-                    <div class="stat-card"><div class="stat-emoji">⏱️</div><div class="stat-number">~7-8 год</div><div class="stat-label">середній час на проєкт</div></div>
-                    <div class="stat-card"><div class="stat-emoji">⚛️</div><div class="stat-number">React/TS</div><div class="stat-label">основний стек</div></div>
-                    <div class="stat-card"><div class="stat-emoji">🌐</div><div class="stat-number">3</div><div class="stat-label">робочі демо-сайти</div></div>
-                </div>
-            </div>
-
-            <!-- Навички -->
-            <div id="skills" class="section">
-                <h2 class="section-title">Навички</h2>
-                <div class="skills-wrapper">
-                    <div class="skill-category">
-                        <h3><span>💻</span> Технічні навички</h3>
-                        <div class="skills-grid" id="skillsGrid"></div>
-                    </div>
-                    <div class="skill-category">
-                        <h3><span>🎨</span> Дизайн та аналітика</h3>
-                        <div class="skills-grid" id="designSkillsGrid"></div>
-                    </div>
-                    <div class="skill-category">
-                        <h3><span>🧠</span> Особисті якості</h3>
-                        <div class="soft-skills-grid" id="softSkillsGrid"></div>
+            <!-- ===== ШАПКА ===== -->
+            <div class="header">
+                <div class="avatar">ВШ</div>
+                <div class="header-info">
+                    <h1>Швед Віталій Михайлович</h1>
+                    <div class="title">Full Stack Developer | Next.js · React · Node.js</div>
+                    <div class="contact-row">
+                        <div class="contacts">
+                            <div class="contact-item" data-copy="shvedvitalik07@gmail.com">📧 shvedvitalik07@gmail.com</div>
+                            <div class="contact-item" data-copy="+380988513636">📞 +380988513636</div>
+                            <div class="contact-item" data-copy="м. Стрий">📍 м. Стрий</div>
+                        </div>
+                        <div class="pdf-corner" id="pdfCornerBtn">📄 Завантажити PDF</div>
                     </div>
                 </div>
             </div>
 
-            <!-- Проєкти -->
-            <div id="projects" class="section">
-                <h2 class="section-title">Проєкти</h2>
-                <div class="projects-grid" id="projectsGrid"></div>
+            <!-- ===== НАВІГАЦІЯ ===== -->
+            <div class="nav">
+                <button class="nav-btn active" data-section="about"><i>👤</i> Про мене</button>
+                <button class="nav-btn" data-section="skills"><i>🛠️</i> Навички</button>
+                <button class="nav-btn" data-section="projects"><i>📁</i> Проєкти</button>
+                <button class="nav-btn" data-section="experience"><i>💼</i> Досвід</button>
+                <button class="nav-btn" data-section="education"><i>🎓</i> Освіта</button>
             </div>
 
-            <!-- Досвід -->
-            <div id="experience" class="section">
-                <h2 class="section-title">Досвід роботи</h2>
-                <div id="experienceContainer"></div>
+            <div class="content">
 
-                <!-- Ключові досягнення (оновлений блок) -->
-                <div style="margin-top: 40px; background: linear-gradient(135deg, #f0f6fc 0%, #e6f0f8 100%); border-radius: 28px; padding: 32px;">
-                    <h3 style="display: flex; align-items: center; gap: 12px; font-size: 24px; margin-bottom: 24px; color: #1e2f3e;">
-                        <i class="fas fa-trophy" style="color: #f5b042;"></i> Ключові досягнення
-                    </h3>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-                        <!-- 1 -->
-                        <div style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                            <div style="font-size: 32px; margin-bottom: 10px;">🏆</div>
-                            <div style="font-weight: 700; font-size: 18px; margin-bottom: 8px;">Повний цикл створення 3 вебсайтів</div>
-                            <div style="color: #4a627a; font-size: 14px; line-height: 1.5;">Самостійно пройшов усі етапи: від складання технічного завдання, створення коду у Visual Studio, верстки та програмування до деплою на хостинг та підключення домену. Кожен проєкт - у портфоліо.</div>
+                <!-- ===== ПРО МЕНЕ ===== -->
+                <div id="about" class="section active">
+                    <h2 class="section-title">Про мене</h2>
+                    <div class="about-text">
+                        <p>
+                            <strong>Молодий, амбітний Full Stack розробник</strong> із сильними soft skills, здобутими під час роботи у сфері обслуговування (комунікація, стресостійкість, вирішення конфліктів, командна робота). Швидко навчаюсь новим технологіям, прагну створювати якісні, сучасні веб-застосунки з гарним UX.
+                        </p>
+                        <ul>
+                            <li><strong>Вік:</strong> 19 років</li>
+                            <li><strong>Готовий працювати:</strong> Віддалено</li>
+                            <li><strong>Бажана посада:</strong> Full Stack Developer (повна / неповна / проєктна / віддалена / гібридна)</li>
+                            <li><strong>Очікувана зарплата:</strong> від 20 000 ₴</li>
+                        </ul>
+                        <p style="margin-top: 14px;">
+                            <strong>Захоплення:</strong> веб-розробка та вивчення нових технологій (постійне самонавчання, слідкую за трендами в IT), 3D-графіка та інтерактивні веб-інтерфейси (Three.js), активно використовую AI-інструменти для оптимізації робочих процесів.
+                        </p>
+                        <p style="margin-top: 8px;">
+                            <strong>Особисті якості:</strong> відповідальний, пунктуальний, уважний до деталей, вмію працювати як самостійно, так і в команді, відкритий до зворотного зв'язку та постійного вдосконалення.
+                        </p>
+                    </div>
+                    <div class="stats">
+                        <div class="stat-card"><div class="stat-emoji">✅</div><div class="stat-number">4</div><div class="stat-label">реалізованих проєктів</div></div>
+                        <div class="stat-card"><div class="stat-emoji">⏱️</div><div class="stat-number">~24–92 год</div><div class="stat-label">середній час на проєкт</div></div>
+                        <div class="stat-card"><div class="stat-emoji">⚛️</div><div class="stat-number">Next.js</div><div class="stat-label">основний стек</div></div>
+                        <div class="stat-card"><div class="stat-emoji">🌐</div><div class="stat-number">3</div><div class="stat-label">робочі демо-сайти</div></div>
+                    </div>
+                </div>
+
+                <!-- ===== НАВИЧКИ ===== -->
+                <div id="skills" class="section">
+                    <h2 class="section-title">Навички</h2>
+                    <div class="skills-wrapper">
+                        <div class="skill-category">
+                            <h3><span>💻</span> Технічні навички</h3>
+                            <div class="skills-grid" id="skillsGrid"></div>
                         </div>
-                        <!-- 2 -->
-                        <div style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                            <div style="font-size: 32px; margin-bottom: 10px;">🏆</div>
-                            <div style="font-weight: 700; font-size: 18px; margin-bottom: 8px;">Аналіз 5+ сайтів конкурентів у туризмі</div>
-                            <div style="color: #4a627a; font-size: 14px; line-height: 1.5;">Провів глибокий UX-аналіз конкурентів, що дозволило виявити слабкі місця та покращити навігацію, конверсію та загальний дизайн фінального продукту.</div>
+                        <div class="skill-category">
+                            <h3><span>🎨</span> Дизайн та аналітика</h3>
+                            <div class="skills-grid" id="designSkillsGrid"></div>
                         </div>
-                        <!-- 3 -->
-                        <div style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                            <div style="font-size: 32px; margin-bottom: 10px;">🏆</div>
-                            <div style="font-weight: 700; font-size: 18px; margin-bottom: 8px;">Розробка ТЗ для дипломного проєкту</div>
-                            <div style="color: #4a627a; font-size: 14px; line-height: 1.5;">Створив детальне технічне завдання, погодив його з викладачем і замовником. Це забезпечило чітке розуміння вимог та ефективну роботу без доробок.</div>
+                        <div class="skill-category">
+                            <h3><span>🧠</span> Особисті якості</h3>
+                            <div class="soft-skills-grid" id="softSkillsGrid"></div>
                         </div>
-                        <!-- 4 -->
-                        <div style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                            <div style="font-size: 32px; margin-bottom: 10px;">🏆</div>
-                            <div style="font-weight: 700; font-size: 18px; margin-bottom: 8px;">Налаштування хостингу та доменів</div>
-                            <div style="color: #4a627a; font-size: 14px; line-height: 1.5;">Успішно задеплоїв сайти на Render та Ukraine.com.ua, налаштував SSL-сертифікати, підключив власні домени. Забезпечив безперебійну роботу проєктів у відкритому доступі.</div>
+                    </div>
+                </div>
+
+                <!-- ===== ПРОЄКТИ ===== -->
+                <div id="projects" class="section">
+                    <h2 class="section-title">Проєкти</h2>
+                    <div class="projects-grid" id="projectsGrid"></div>
+                </div>
+
+                <!-- ===== ДОСВІД ===== -->
+                <div id="experience" class="section">
+                    <h2 class="section-title">Досвід роботи</h2>
+                    <div id="experienceContainer"></div>
+
+                    <!-- Ключові досягнення -->
+                    <div class="achievements-block">
+                        <h3><i class="fas fa-trophy" style="color:#f5b042;"></i> Ключові досягнення</h3>
+                        <div class="achievements-grid">
+                            <div class="achievement-card">
+                                <div class="icon">🏆</div>
+                                <div class="label">Full‑Stack застосунок для 3D‑друку</div>
+                                <div class="desc">Розробив повноцінний веб-застосунок з адмін-панеллю, 3D-переглядом, AI-консультантом та хмарним зберіганням. Next.js 16, TypeScript, Supabase, Three.js.</div>
+                            </div>
+                            <div class="achievement-card">
+                                <div class="icon">🏆</div>
+                                <div class="label">Інтеграція з PostgreSQL через Supabase</div>
+                                <div class="desc">Спроектував та інтегрував реляційну базу даних для зберігання замовлень, користувачів, послуг та матеріалів.</div>
+                            </div>
+                            <div class="achievement-card">
+                                <div class="icon">🏆</div>
+                                <div class="label">Оптимізація продуктивності та SEO</div>
+                                <div class="desc">Провів масштабний рефакторинг коду, забезпечив адаптивний дизайн та покращив швидкодію сайтів.</div>
+                            </div>
+                            <div class="achievement-card">
+                                <div class="icon">🏆</div>
+                                <div class="label">Деплой на Render / Vercel</div>
+                                <div class="desc">Налаштував хостинг, SSL-сертифікати та власні домени для всіх проєктів.</div>
+                            </div>
+                            <div class="achievement-card">
+                                <div class="icon">🏆</div>
+                                <div class="label">Аналіз конкурентів + UX-дослідження</div>
+                                <div class="desc">Провів опитування та аналіз ринку для туристичних проєктів, що покращило навігацію та конверсію.</div>
+                            </div>
+                            <div class="achievement-card">
+                                <div class="icon">🏆</div>
+                                <div class="label">Досвід роботи з реальним замовником</div>
+                                <div class="desc">Комерційний проєкт «3D-друк» — від брифінгу до здачі готового застосунку.</div>
+                            </div>
                         </div>
-                        <!-- 5 -->
-                        <div style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                            <div style="font-size: 32px; margin-bottom: 10px;">🏆</div>
-                            <div style="font-weight: 700; font-size: 18px; margin-bottom: 8px;">Валідація дизайну через опитування</div>
-                            <div style="color: #4a627a; font-size: 14px; line-height: 1.5;">Провів UX-інтерв'ю з 10 респондентами, зібрав фідбек, вніс покращення в інтерфейс до початку розробки. Це зменшило кількість правок на 30%.</div>
-                        </div>
-                        <!-- 6 (додаткове) -->
-                        <div style="background: white; border-radius: 20px; padding: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
-                            <div style="font-size: 32px; margin-bottom: 10px;">🏆</div>
-                            <div style="font-weight: 700; font-size: 18px; margin-bottom: 8px;">Комерційний досвід із реальним замовником</div>
-                            <div style="color: #4a627a; font-size: 14px; line-height: 1.5;">Проєкт "PR-тут" виконано на замовлення: від брифінгу, збору вимог, створення прототипу до здачі готового React-застосунку.</div>
-                        </div>
+                    </div>
+                </div>
+
+                <!-- ===== ОСВІТА ===== -->
+                <div id="education" class="section">
+                    <h2 class="section-title">Освіта</h2>
+                    <div class="edu-block">
+                        <h3>ВСП «СФК ЛНУП»</h3>
+                        <p class="sub">2022 – 2026</p>
+                        <p style="margin: 14px 0;">🎓 Спеціальність: 122 «Комп'ютерні науки»</p>
+                        <p>📚 Освітній рівень: молодший спеціаліст</p>
+                        <p>💻 Дипломний проєкт: сайт «Oceanica»</p>
+                        <hr />
+                        <p><strong>Додатково:</strong> Дія. Цифрова освіта, постійне самонавчання (курси, документація, open-source).</p>
+                        <p style="margin-top:8px;"><strong>Мови:</strong> українська (рідна), англійська (базовий).</p>
                     </div>
                 </div>
             </div>
 
-            <!-- Освіта -->
-            <div id="education" class="section">
-                <h2 class="section-title">Освіта</h2>
-                <div style="background:#f6fafd; border-radius: 24px; padding: 28px;">
-                    <h3 style="font-size: 24px; margin-bottom: 8px;">ВСП "СФК ЛНУП"</h3>
-                    <p style="color:#2c6e9e; font-weight: 500;">2022 - 2026</p>
-                    <p style="margin: 14px 0">🎓 Спеціальність: 122 «Комп'ютерні науки»</p>
-                    <p>📚 Освітній рівень: молодший спеціаліст</p>
-                    <p>💻 Дипломний проєкт: сайт «Oceanica»</p>
-                    <hr style="margin: 20px 0; border-color: #d0e0ec;">
+            <!-- ===== ФУТЕР ===== -->
+            <div class="footer">
+                <div class="footer-title">📁 Мої проєкти та GitHub</div>
+                <div class="footer-links">
+                    <a href="https://github.com/Pomidor4ikYT" target="_blank" class="footer-link"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="https://threed-druk.onrender.com/" target="_blank" class="footer-link"><i class="fas fa-cube"></i> 3D-друк</a>
+                    <a href="https://oceanica-0m18.onrender.com/" target="_blank" class="footer-link"><i class="fas fa-globe"></i> Oceanica</a>
+                    <a href="https://www.clubmridnya.org/index.html" target="_blank" class="footer-link"><i class="fas fa-plane"></i> Рідня Travel</a>
                 </div>
-            </div>
-        </div>
-
-        <!-- Футер -->
-        <div class="footer">
-            <div class="footer-title">📁 Мої проєкти та GitHub</div>
-            <div class="footer-links">
-                <a href="https://github.com/Pomidor4ikYT" target="_blank" class="footer-link"><i class="fab fa-github"></i> GitHub</a>
-                <a href="https://github.com/Pomidor4ikYT/oceanica" target="_blank" class="footer-link"><i class="fas fa-globe"></i> Oceanica</a>
-                <a href="https://github.com/Pomidor4ikYT/ridnya-travel" target="_blank" class="footer-link"><i class="fas fa-plane"></i> Рідня Travel</a>
-                <a href="https://github.com/Pomidor4ikYT/pr-tut-site" target="_blank" class="footer-link"><i class="fab fa-react"></i> PR-тут</a>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    const technicalSkills = [
-        { name: "HTML", icon: "fab fa-html5", level: 92 },
-        { name: "CSS", icon: "fab fa-css3-alt", level: 88 },
-        { name: "JavaScript (ES6+)", icon: "fab fa-js", level: 75 },
-        { name: "React.js", icon: "fab fa-react", level: 70 },
-        { name: "TypeScript", icon: "fas fa-code", level: 65 },
-        { name: "Git / GitHub", icon: "fab fa-git-alt", level: 90 },
-        { name: "Адаптивна верстка", icon: "fas fa-mobile-alt", level: 85 },
-        { name: "SQL (PostgreSQL/MySQL)", icon: "fas fa-database", level: 55 },
-        { name: "REST API / Axios", icon: "fas fa-plug", level: 60 },
-        { name: "npm / командний рядок", icon: "fab fa-npm", level: 75 }
-    ];
+    <script>
+        // ===== ДАНІ =====
 
-    const designSkills = [
-        { name: "Figma (UI/UX)", icon: "fab fa-figma", level: 10 },
-        { name: "Аналіз конкурентів", icon: "fas fa-chart-line", level: 80 },
-        { name: "Складання ТЗ", icon: "fas fa-file-alt", level: 85 },
-        { name: "Опитування/інтерв'ю", icon: "fas fa-users", level: 75 },
-        { name: "Прототипування", icon: "fas fa-pencil-ruler", level: 70 },
-        { name: "Хостинг та домени", icon: "fas fa-server", level: 85 }
-    ];
+        // Технічні навички (оновлені)
+        const technicalSkills = [
+            { name: "HTML", icon: "fab fa-html5", level: 92 },
+            { name: "CSS", icon: "fab fa-css3-alt", level: 88 },
+            { name: "JavaScript (ES6+)", icon: "fab fa-js", level: 75 },
+            { name: "React.js", icon: "fab fa-react", level: 90 },
+            { name: "Next.js", icon: "fab fa-react", level: 85 }, // іконка react підходить
+            { name: "TypeScript", icon: "fas fa-code", level: 90 },
+            { name: "Tailwind CSS", icon: "fab fa-css3-alt", level: 80 },
+            { name: "Supabase / PostgreSQL", icon: "fas fa-database", level: 75 },
+            { name: "Node.js / Express", icon: "fab fa-node-js", level: 75 },
+            { name: "SEO-оптимізація", icon: "fas fa-search", level: 70 },
+            { name: "Git / GitHub", icon: "fab fa-git-alt", level: 90 },
+            { name: "GitHub Actions / CI/CD", icon: "fas fa-sync-alt", level: 50 },
+            { name: "Pixel Perfect", icon: "fas fa-ruler", level: 80 },
+            { name: "Three.js", icon: "fas fa-cube", level: 70 },
+            { name: "Адаптивна верстка", icon: "fas fa-mobile-alt", level: 85 },
+            { name: "SQL (PostgreSQL/MySQL)", icon: "fas fa-database", level: 55 },
+            { name: "REST API / Axios", icon: "fas fa-plug", level: 60 },
+            { name: "npm / командний рядок", icon: "fab fa-npm", level: 75 }
+        ];
 
-    const softSkillsList = [
-        "🚀 Швидке навчання", "💭 Критичне мислення", "💬 Комунікабельність", "⭐ Відповідальність",
-        "📋 Самоорганізація", "🤝 Командна робота", "🔍 Увага до деталей", "⏳ Тайм-менеджмент",
-        "🧩 Проблемне мислення", "🎯 Цілеспрямованість"
-    ];
+        // Дизайн та аналітика
+        const designSkills = [
+            { name: "Figma (UI/UX)", icon: "fab fa-figma", level: 10 },
+            { name: "Аналіз конкурентів", icon: "fas fa-chart-line", level: 80 },
+            { name: "Складання ТЗ", icon: "fas fa-file-alt", level: 85 },
+            { name: "Опитування/інтерв'ю", icon: "fas fa-users", level: 75 },
+            { name: "Прототипування", icon: "fas fa-pencil-ruler", level: 70 },
+            { name: "Хостинг та домени (Render, Vercel)", icon: "fas fa-server", level: 85 }
+        ];
 
-    const projectsArray = [
-        { title: "Oceanica", desc: "Сайт туристичного агентства (дипломний проєкт). Проведено аналіз конкурентів, складено ТЗ, реалізовано повну верстку та деплой на Render.", tech: ["HTML", "CSS", "JavaScript"], time: "10-11 год", github: "https://github.com/Pomidor4ikYT/oceanica", demo: "https://oceanica-0m18.onrender.com" },
-        { title: "Рідня Travel", desc: "Сайт туристичного клубу (робоча практика). Інтеграція з Ukraine.com.ua, опрацювання вимог замовника, адаптивний дизайн.", tech: ["HTML", "CSS", "JS"], time: "4-6 год", github: "https://github.com/Pomidor4ikYT/ridnya-travel", demo: "https://www.clubmridnya.org/" },
-        { title: "PR-тут", desc: "Комерційний проєкт на React + TypeScript. Розробка ТЗ, підключення до бази даних через API, деплой на Render.", tech: ["React", "TypeScript", "CSS"], time: "8-9 год", github: "https://github.com/Pomidor4ikYT/pr-tut-site", demo: "https://pr-tut-site.onrender.com" }
-    ];
+        // Особисті якості
+        const softSkillsList = [
+            "🚀 Швидке навчання", "💭 Критичне мислення", "💬 Комунікабельність", "⭐ Відповідальність",
+            "📋 Самоорганізація", "🤝 Командна робота", "🔍 Увага до деталей", "⏳ Тайм-менеджмент",
+            "🧩 Проблемне мислення", "🎯 Цілеспрямованість", "💪 Стресостійкість", "🧠 Емпатія"
+        ];
 
-    const experienceData = [
-        { title: "PR-тут (комерційний проєкт)", period: "React, TypeScript, SQL | 8-9 годин | 2026", details: ["Розробка корпоративного сайту на React з нуля", "Використання TypeScript для типізації", "Підключення до PostgreSQL через REST API", "Деплой на Render, налаштування домену", "Складання технічного завдання для замовника"] },
-        { title: "Рідня Travel (робоча практика)", period: "HTML, CSS, JavaScript | 4-6 годин | 2026", details: ["Сайт для туристичного клубу на замовлення коледжу", "Інтеграція з хостингом Ukraine.com.ua", "Проведення опитування серед користувачів", "Аналіз конкурентів у сфері туризму", "Самостійна верстка та адаптив"] },
-        { title: "Oceanica (дипломний проєкт)", period: "HTML, CSS, JavaScript | 10-11 годин | 2025-2026", details: ["Повний цикл створення сайту турагентства: ТЗ, дизайн, верстка, деплой", "Адаптивний дизайн, сучасний UI/UX", "Хостинг на Render, налаштування SSL", "Проведення UX-тестування з 5 респондентами"] },
-        { title: "Інший досвід (ресторанний бізнес)", period: "2025-2026", details: ["Робота в команді в умовах високого навантаження", "Стресостійкість, комунікація з клієнтами", "Навички вирішення конфліктів та швидкого прийняття рішень"] }
-    ];
+        // Проєкти (оновлені)
+        const projectsArray = [{
+            title: "3D-друк",
+            desc: "Комерційний Full-Stack застосунок для 3D-друку. Адмін-панель, 3D-перегляд моделей, AI-консультант, хмарне зберігання, система замовлень.",
+            tech: ["Next.js 16", "TypeScript", "Supabase", "Three.js", "Tailwind CSS"],
+            time: "~8-10 год",
+            github: "https://github.com/Pomidor4ikYT/3D-druk",
+            demo: "https://threed-druk.onrender.com/"
+        }, {
+            title: "Oceanica",
+            desc: "Дипломний проєкт — туристична агенція. Система бронювання турів, каталог напрямків, серверна частина (Node.js/Express), REST API.",
+            tech: ["JavaScript", "HTML", "CSS", "Node.js", "Express", "REST API"],
+            time: "~10-11 год",
+            github: "https://github.com/Pomidor4ikYT/oceanica",
+            demo: "https://oceanica-0m18.onrender.com/"
+        }, {
+            title: "Рідня Travel",
+            desc: "Робоча практика — туристичний клуб. Рефакторинг коду, адаптивність, оптимізація UX, Pixel Perfect, деплой на Ukraine.com.ua.",
+            tech: ["HTML", "CSS", "JavaScript", "Git", "Figma"],
+            time: "~4-6 год",
+            github: "https://github.com/Pomidor4ikYT/ridnya-travel",
+            demo: "https://www.clubmridnya.org/index.html"
+        }];
 
-    function renderTechnicalSkills() {
-        const container = document.getElementById("skillsGrid");
-        if (container) {
+        // Досвід роботи (оновлений)
+        const experienceData = [{
+            title: "Full Stack Developer — 3D-друк (комерційний проєкт)",
+            period: "IT · 2 місяці · 06.2026 – 07.2026",
+            details: [
+                "Розробив повноцінний веб-застосунок для 3D-друку з нуля",
+                "Створив адмін-панель з управлінням контентом, послугами та замовленнями",
+                "Спроектував та інтегрував реляційну базу даних (PostgreSQL) через Supabase",
+                "Інтегрував 3D-перегляд моделей, AI-консультанта та хмарне зберігання",
+                "Оптимізував продуктивність та SEO, забезпечив адаптивний дизайн",
+                "Технології: Next.js 16, TypeScript, Supabase, Three.js, Tailwind CSS",
+                "Посилання: <a href='https://threed-druk.onrender.com/' target='_blank'>threed-druk.onrender.com</a> · <a href='https://github.com/Pomidor4ikYT/3D-druk' target='_blank'>GitHub</a>"
+            ]
+        }, {
+            title: "Піцайоло — Ресторанний бізнес (Familia)",
+            period: "Інше · 1 рік 6 місяців · 01.2025 – 06.2026",
+            details: [
+                "Щоденна активна комунікація з великою кількістю клієнтів, розвинув навички швидкого встановлення контакту",
+                "Успішне вирішення конфліктних ситуацій та робота з запереченнями — стресостійкість та дипломатичність",
+                "Ефективна взаємодія з командою кухні та персоналом залу в інтенсивному ритмі",
+                "Розвинені soft skills: емпатія, відповідальність, пунктуальність, багатозадачність"
+            ]
+        }, {
+            title: "Full Stack Developer — Рідня Travel (робоча практика)",
+            period: "IT · 2 місяці · 04.2026 – 05.2026",
+            details: [
+                "Розробив та впровадив нові сторінки для туристичної платформи, розширив функціональність",
+                "Провів масштабний рефакторинг кодової бази, покращив швидкодію та час завантаження",
+                "Забезпечив повну адаптивність інтерфейсу для мобільних пристроїв, планшетів та десктопів",
+                "Оптимізував UX та навігацію, зробив взаємодію більш інтуїтивною",
+                "Технології: HTML, CSS, JavaScript, Git, Figma, Pixel Perfect",
+                "Посилання: <a href='https://www.clubmridnya.org/index.html' target='_blank'>clubmridnya.org</a> · <a href='https://github.com/Pomidor4ikYT/ridnya-travel' target='_blank'>GitHub</a>"
+            ]
+        }, {
+            title: "Full Stack Developer — Oceanica (дипломний проєкт)",
+            period: "IT · 2 місяці · 01.2026 – 02.2026",
+            details: [
+                "Розробив повноцінний веб-застосунок для туристичної агенції з нуля — від проєктування до деплою",
+                "Створив систему бронювання турів з інтерактивним календарем та динамічним відображенням пропозицій",
+                "Реалізував каталог туристичних напрямків з категоріями (екзотика, природа, пляж, історія) та фільтрацією",
+                "Інтегрував серверну частину (Node.js/Express) для обробки даних, зберігання турів, бронювань та відгуків",
+                "Провів комплексний аналіз конкурентів, самостійно спроектував UI/UX, написав адаптивний код, запустив у деплой",
+                "Технології: JavaScript, HTML, CSS, Node.js, Express, REST API, Git, Figma",
+                "Посилання: <a href='https://oceanica-0m18.onrender.com/' target='_blank'>oceanica-0m18.onrender.com</a> · <a href='https://github.com/Pomidor4ikYT/oceanica' target='_blank'>GitHub</a>"
+            ]
+        }];
+
+        // ===== РЕНДЕРИНГ =====
+
+        function renderTechnicalSkills() {
+            const container = document.getElementById("skillsGrid");
+            if (!container) return;
             container.innerHTML = "";
             technicalSkills.forEach(skill => {
                 const div = document.createElement("div");
@@ -746,18 +912,17 @@
                         <span>${skill.name}</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" data-level="${skill.level}" style="width: 0%;"></div>
+                        <div class="progress-fill" data-level="${skill.level}" style="width:0%;"></div>
                     </div>
                     <div class="skill-percent">${skill.level}%</div>
                 `;
                 container.appendChild(div);
             });
         }
-    }
 
-    function renderDesignSkills() {
-        const container = document.getElementById("designSkillsGrid");
-        if (container) {
+        function renderDesignSkills() {
+            const container = document.getElementById("designSkillsGrid");
+            if (!container) return;
             container.innerHTML = "";
             designSkills.forEach(skill => {
                 const div = document.createElement("div");
@@ -768,18 +933,17 @@
                         <span>${skill.name}</span>
                     </div>
                     <div class="progress-bar">
-                        <div class="progress-fill" data-level="${skill.level}" style="width: 0%;"></div>
+                        <div class="progress-fill" data-level="${skill.level}" style="width:0%;"></div>
                     </div>
                     <div class="skill-percent">${skill.level}%</div>
                 `;
                 container.appendChild(div);
             });
         }
-    }
 
-    function renderSoftSkills() {
-        const container = document.getElementById("softSkillsGrid");
-        if (container) {
+        function renderSoftSkills() {
+            const container = document.getElementById("softSkillsGrid");
+            if (!container) return;
             container.innerHTML = "";
             softSkillsList.forEach(item => {
                 const tag = document.createElement("div");
@@ -788,11 +952,10 @@
                 container.appendChild(tag);
             });
         }
-    }
 
-    function renderProjects() {
-        const container = document.getElementById("projectsGrid");
-        if (container) {
+        function renderProjects() {
+            const container = document.getElementById("projectsGrid");
+            if (!container) return;
             container.innerHTML = "";
             projectsArray.forEach(p => {
                 const card = document.createElement("div");
@@ -810,15 +973,15 @@
                 container.appendChild(card);
             });
         }
-    }
 
-    function renderExperience() {
-        const container = document.getElementById("experienceContainer");
-        if (container) {
+        function renderExperience() {
+            const container = document.getElementById("experienceContainer");
+            if (!container) return;
             container.innerHTML = "";
             experienceData.forEach(exp => {
                 const item = document.createElement("div");
                 item.className = "experience-item";
+                // дозволяємо HTML у details (для посилань)
                 item.innerHTML = `
                     <div class="exp-title">${exp.title}</div>
                     <div class="exp-period">${exp.period}</div>
@@ -829,102 +992,108 @@
                 container.appendChild(item);
             });
         }
-    }
 
-    function animateSkillsOnView() {
-        const skillsSection = document.getElementById("skills");
-        if (!skillsSection) return;
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const fills = skillsSection.querySelectorAll(".progress-fill");
-                    fills.forEach(fill => {
-                        const level = fill.getAttribute("data-level");
-                        if (level && fill.style.width !== `${level}%`) {
-                            setTimeout(() => { fill.style.width = `${level}%`; }, 100);
-                        }
-                    });
-                    observer.unobserve(entry.target);
-                }
+        // ===== АНІМАЦІЯ НАВИЧОК =====
+        function animateSkillsOnView() {
+            const section = document.getElementById("skills");
+            if (!section) return;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const fills = section.querySelectorAll(".progress-fill");
+                        fills.forEach(fill => {
+                            const level = fill.getAttribute("data-level");
+                            if (level && fill.style.width !== `${level}%`) {
+                                setTimeout(() => { fill.style.width = `${level}%`; }, 100);
+                            }
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            observer.observe(section);
+        }
+
+        // ===== КОПІЮВАННЯ =====
+        function setupCopy() {
+            document.querySelectorAll(".contact-item").forEach(el => {
+                el.addEventListener("click", () => {
+                    const text = el.getAttribute("data-copy");
+                    if (text) {
+                        navigator.clipboard.writeText(text).then(() => {
+                            el.classList.add("copied");
+                            setTimeout(() => el.classList.remove("copied"), 2000);
+                        }).catch(console.warn);
+                    }
+                });
             });
-        }, { threshold: 0.3 });
-        observer.observe(skillsSection);
-    }
+        }
 
-    function setupCopy() {
-        document.querySelectorAll(".contact-item").forEach(el => {
-            el.addEventListener("click", () => {
-                const text = el.getAttribute("data-copy");
-                if (text) {
-                    navigator.clipboard.writeText(text).then(() => {
-                        el.classList.add("copied");
-                        setTimeout(() => el.classList.remove("copied"), 2000);
-                    }).catch(console.warn);
+        // ===== НАВІГАЦІЯ =====
+        function setupNavigation() {
+            const btns = document.querySelectorAll(".nav-btn");
+            const sections = {
+                about: document.getElementById("about"),
+                skills: document.getElementById("skills"),
+                projects: document.getElementById("projects"),
+                experience: document.getElementById("experience"),
+                education: document.getElementById("education")
+            };
+
+            function activate(sectionId) {
+                Object.values(sections).forEach(sec => sec?.classList.remove("active"));
+                const target = sections[sectionId];
+                if (target) target.classList.add("active");
+                btns.forEach(btn => {
+                    btn.classList.remove("active");
+                    if (btn.getAttribute("data-section") === sectionId) btn.classList.add("active");
+                });
+                if (sectionId === "skills") {
+                    setTimeout(() => {
+                        document.querySelectorAll("#skills .progress-fill").forEach(fill => {
+                            const level = fill.getAttribute("data-level");
+                            if (level && fill.style.width !== `${level}%`) fill.style.width = `${level}%`;
+                        });
+                    }, 150);
                 }
-            });
-        });
-    }
+            }
 
-    function setupNavigation() {
-        const btns = document.querySelectorAll(".nav-btn");
-        const sections = {
-            about: document.getElementById("about"),
-            skills: document.getElementById("skills"),
-            projects: document.getElementById("projects"),
-            experience: document.getElementById("experience"),
-            education: document.getElementById("education")
-        };
-
-        function activate(sectionId) {
-            Object.values(sections).forEach(sec => sec?.classList.remove("active"));
-            const target = sections[sectionId];
-            if (target) target.classList.add("active");
             btns.forEach(btn => {
-                btn.classList.remove("active");
-                if (btn.getAttribute("data-section") === sectionId) btn.classList.add("active");
+                btn.addEventListener("click", () => {
+                    const sectionId = btn.getAttribute("data-section");
+                    if (sectionId && sections[sectionId]) activate(sectionId);
+                });
             });
-            if (sectionId === "skills") {
+        }
+
+        // ===== PDF (друк) =====
+        function setupPdf() {
+            const btn = document.getElementById("pdfCornerBtn");
+            if (btn) btn.addEventListener("click", () => window.print());
+        }
+
+        // ===== ЗАПУСК =====
+        document.addEventListener("DOMContentLoaded", () => {
+            renderTechnicalSkills();
+            renderDesignSkills();
+            renderSoftSkills();
+            renderProjects();
+            renderExperience();
+            setupCopy();
+            setupNavigation();
+            setupPdf();
+            animateSkillsOnView();
+
+            // якщо секція навичок активна спочатку — анімуємо
+            if (document.getElementById("skills")?.classList.contains("active")) {
                 setTimeout(() => {
                     document.querySelectorAll("#skills .progress-fill").forEach(fill => {
-                        const level = fill.getAttribute("data-level");
-                        if (level && fill.style.width !== `${level}%`) fill.style.width = `${level}%`;
+                        const lvl = fill.getAttribute("data-level");
+                        if (lvl) fill.style.width = `${lvl}%`;
                     });
-                }, 150);
+                }, 200);
             }
-        }
-
-        btns.forEach(btn => {
-            btn.addEventListener("click", () => {
-                const sectionId = btn.getAttribute("data-section");
-                if (sectionId && sections[sectionId]) activate(sectionId);
-            });
         });
-    }
-
-    function setupPdf() {
-        const pdfBtn = document.getElementById("pdfCornerBtn");
-        if (pdfBtn) pdfBtn.addEventListener("click", () => window.print());
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-        renderTechnicalSkills();
-        renderDesignSkills();
-        renderSoftSkills();
-        renderProjects();
-        renderExperience();
-        setupCopy();
-        setupNavigation();
-        setupPdf();
-        animateSkillsOnView();
-        if (document.getElementById("skills")?.classList.contains("active")) {
-            setTimeout(() => {
-                document.querySelectorAll("#skills .progress-fill").forEach(fill => {
-                    const lvl = fill.getAttribute("data-level");
-                    if (lvl) fill.style.width = `${lvl}%`;
-                });
-            }, 200);
-        }
-    });
-</script>
+    </script>
 </body>
 </html>
