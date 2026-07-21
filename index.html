@@ -44,20 +44,20 @@
             flex-wrap: wrap;
         }
 
-        .avatar {
-            width: 110px;
-            height: 110px;
-            background: #2c4f6e;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 44px;
-            font-weight: 600;
-            color: white;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-            flex-shrink: 0;
-        }
+.avatar {
+    width: 110px;
+    height: 110px;
+    background: #2c4f6e;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 44px;
+    font-weight: 600;
+    color: white;
+    border: 3px solid rgba(255,255,255,0.3);
+    object-fit: cover;
+}
 
         .header-info {
             flex: 1;
@@ -633,7 +633,7 @@
 
             <!-- ===== ШАПКА ===== -->
             <div class="header">
-                <div class="avatar">ВШ</div>
+                <img class="avatar" src="img1.jpg" alt="Фото Віталія Шведа" />
                 <div class="header-info">
                     <h1>Швед Віталій Михайлович</h1>
                     <div class="title">Full Stack Developer | Next.js · React · Node.js</div>
